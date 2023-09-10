@@ -3,7 +3,8 @@ __pycache__
 *.sw?
 .idea/
 # Locally generated
-/settings
+# /settings
+# I want to check in my local settings
 .vscode/settings.json
 .DS_Store
 .bak
