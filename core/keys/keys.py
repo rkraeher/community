@@ -129,7 +129,8 @@ punctuation_words = {
     "coma": ",",
     "period": ".",
     "full stop": ".",
-    "semicolon": ";",
+    # "semicolon": ";",
+    "semi": ";",
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
@@ -140,6 +141,7 @@ punctuation_words = {
     "number sign": "#",
     "percent sign": "%",
     "at sign": "@",
+    "asperand": "@",
     "and sign": "&",
     "ampersand": "&",
     # Currencies
@@ -150,6 +152,8 @@ punctuation_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
+    "open paren": '(',
+    "close paren": ')',
 }
 symbol_key_words = {
     "dot": ".",
@@ -168,6 +172,8 @@ symbol_key_words = {
     "r brack": "]",
     "r bracket": "]",
     "right bracket": "]",
+    "open square":"[",
+    "close square": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -235,7 +241,7 @@ simple_keys = [
 alternate_keys = {
     "wipe": "backspace",
     "delete": "backspace",
-    #'junk': 'backspace',
+    'junk': 'backspace',
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
