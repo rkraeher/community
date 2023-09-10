@@ -126,3 +126,144 @@ class Actions:
 ctx.lists["user.punctuation"] = punctuation_dict
 ctx.lists["user.symbol_key"] = symbol_key_dict
 ctx_dragon.lists["user.punctuation"] = dragon_punctuation_dict
+# `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
+# `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
+punctuation_words = {
+    # TODO: I'm not sure why we need these, I think it has something to do with
+    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
+    "`": "`",
+    ",": ",",  # <== these things
+    "back tick": "`",
+    "comma": ",",
+    # Workaround for issue with conformer b-series; see #946
+    "coma": ",",
+    "period": ".",
+    "full stop": ".",
+    # "semicolon": ";",
+    "semi": ";",
+    "colon": ":",
+    "forward slash": "/",
+    "question mark": "?",
+    "exclamation mark": "!",
+    "exclamation point": "!",
+    "asterisk": "*",
+    "hash sign": "#",
+    "number sign": "#",
+    "percent sign": "%",
+    "at sign": "@",
+    "asperand": "@",
+    "and sign": "&",
+    "ampersand": "&",
+    # Currencies
+    "dollar sign": "$",
+    "pound sign": "£",
+    "hyphen": "-",
+    "L paren": "(",
+    "left paren": "(",
+    "R paren": ")",
+    "right paren": ")",
+    "open paren": '(',
+    "close paren": ')',
+}
+symbol_key_words = {
+    "dot": ".",
+    "point": ".",
+    "quote": "'",
+    "question": "?",
+    "apostrophe": "'",
+    "L square": "[",
+    "left square": "[",
+    "brack": "[",
+    "bracket": "[",
+    "left bracket": "[",
+    "square": "[",
+    "R square": "]",
+    "right square": "]",
+    "r brack": "]",
+    "r bracket": "]",
+    "right bracket": "]",
+    "open square":"[",
+    "close square": "]",
+    "slash": "/",
+    "backslash": "\\",
+    "minus": "-",
+    "dash": "-",
+    "equals": "=",
+    "plus": "+",
+    "grave": "`",
+    "tilde": "~",
+    "bang": "!",
+    "down score": "_",
+    "underscore": "_",
+    "paren": "(",
+    "brace": "{",
+    "left brace": "{",
+    "curly bracket": "{",
+    "left curly bracket": "{",
+    "r brace": "}",
+    "right brace": "}",
+    "r curly bracket": "}",
+    "right curly bracket": "}",
+    "angle": "<",
+    "left angle": "<",
+    "less than": "<",
+    "rangle": ">",
+    "R angle": ">",
+    "right angle": ">",
+    "greater than": ">",
+    "star": "*",
+    "hash": "#",
+    "percent": "%",
+    "caret": "^",
+    "amper": "&",
+    "pipe": "|",
+    "dub quote": '"',
+    "double quote": '"',
+    # Currencies
+    "dollar": "$",
+    "pound": "£",
+}
+
+# make punctuation words also included in {user.symbol_keys}
+symbol_key_words.update(punctuation_words)
+ctx.lists["self.punctuation"] = punctuation_words
+ctx.lists["self.symbol_key"] = symbol_key_words
+ctx.lists["self.number_key"] = {name: str(i) for i, name in enumerate(digits)}
+ctx.lists["self.arrow_key"] = {
+    "down": "down",
+    "left": "left",
+    "right": "right",
+    "up": "up",
+}
+
+simple_keys = [
+    "end",
+    "enter",
+    "escape",
+    "home",
+    "insert",
+    "pagedown",
+    "pageup",
+    "space",
+    "tab",
+]
+
+alternate_keys = {
+    "wipe": "backspace",
+    "delete": "backspace",
+    'junk': 'backspace',
+    "forward delete": "delete",
+    "page up": "pageup",
+    "page down": "pagedown",
+}
+# mac apparently doesn't have the menu key.
+if app.platform in ("windows", "linux"):
+    alternate_keys["menu key"] = "menu"
+    alternate_keys["print screen"] = "printscr"
+
+special_keys = {k: k for k in simple_keys}
+special_keys.update(alternate_keys)
+ctx.lists["self.special_key"] = special_keys
+ctx.lists["self.function_key"] = {
+    f"F {name}": f"f{i}" for i, name in enumerate(f_digits, start=1)
+}
