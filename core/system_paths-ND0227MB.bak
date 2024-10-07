@@ -1,0 +1,16 @@
+list: user.system_paths
+hostname: ND0227MB
+-
+user: /Users/rudi.kraeher
+desktop: /Users/rudi.kraeher/Desktop
+desk: /Users/rudi.kraeher/Desktop
+documents: /Users/rudi.kraeher/Documents
+docks: /Users/rudi.kraeher/Documents
+downloads: /Users/rudi.kraeher/Downloads
+music: /Users/rudi.kraeher/Music
+pictures: /Users/rudi.kraeher/Pictures
+videos: /Users/rudi.kraeher/Videos
+talon home: /Users/rudi.kraeher/.talon
+talon recordings: /Users/rudi.kraeher/.talon/recordings
+talon user: /Users/rudi.kraeher/.talon/user
+home: /Users/rudi.kraeher
