@@ -1,0 +1,15 @@
+list: user.system_paths
+hostname: ND0227MB
+-
+user: /Users/rumbp
+profile: /Users/rumbp
+desktop: /Users/rumbp/Desktop
+desk: /Users/rumbp/Desktop
+documents: /Users/rumbp/Documents
+docks: /Users/rumbp/Documents
+downloads: /Users/rumbp/Downloads
+music: /Users/rumbp/Music
+pictures: /Users/rumbp/Pictures
+videos: /Users/rumbp/Videos
+talon home: /Users/rumbp/.talon
+talon user: /Users/rumbp/.talon/user
